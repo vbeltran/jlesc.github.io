@@ -154,6 +154,18 @@
               </a>
 
             
+              <a href="/about/fellows.html" class="dropdown-item ">
+                
+                
+
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-name">Fellows</div>
+                  
+                </div>
+
+              </a>
+
+            
               <a href="/about/people" class="dropdown-item ">
                 
                 
@@ -276,9 +288,6 @@
     <div class="row justify-content-center">
       <div class="col-12 col-lg-8">
           
-            <div class="post-date">26 April 2023</div>
-          
-          
           <div class="post-categories">
           
 
@@ -294,6 +303,54 @@
 
           
 
+          <ul class="event-meta mb-2">
+              
+              
+              
+              <li><b>Head</b></li>
+              
+              
+              <li>Tessier Francois (INRIA)</li>
+              
+              
+              <li><b>Members</b></li>
+              
+              
+              
+              <li>
+                  Kramer Bill ()
+              </li>
+              
+              
+              
+              <li>
+                  Antoniu Gabriel (INRIA)
+              </li>
+              
+              
+              
+              <li>
+                  Monniot Julien (INRIA)
+              </li>
+              
+              
+              
+              <li>
+                  Jolivel Théo (INRIA)
+              </li>
+              
+              
+              
+              <li>
+                  Luettgau Jakob (UTK)
+              </li>
+              
+              
+              
+              
+              
+              
+          </ul>
       </div>
     </div>
           
@@ -309,14 +366,13 @@
 <div class="section pt-0">
   <div class="container">
     <div class="row justify-content-center">
-
       <div class="col-12 col-lg-8">
         <div class="content"><h2 id="research-topic-and-goals">Research topic and goals</h2>
 <p>In recent years, to address the growing gap between computing power and I/O bandwidth, storage tiers have multiplied within supercomputers. While the paradigm until then was a shared global file system (Lustre, IBM Storage Scale, …), storage is now available in a disaggregated form, still presenting a centralized storage system but completed with several intermediate layers such as node-local disks, burst buffers or network-attached storage (NVMeoF, CXL) to name a few.</p>
 
 <p>This profusion of different technologies and architectures makes the use of these resources complex and their sizing at the machine design stage risky. One approach to partially solving these problems is to model supercomputers equipped with several levels of storage, coupled with the simulation of the scheduling of an execution history of large-scale I/O intensive applications. This type of simulation allows us to observe the behavior of storage tiers in the face of real-world workloads. Recently, following the decommissioning of the machine, several years of execution traces (including I/O traces) of applications that ran on Blue Waters have been made public. This mass of information is invaluable to feed simulations and study the architecture of modern storage systems.</p>
 
-<p>In this JLESC project, we propose to analyze Darshan traces and Lustre metrics from several years of Blue Waters production to feed StorAlloc, a simulator of a storage-aware job scheduler developed within the Inria KerData’s team. The goal of work is twofold: to provide a post-mortem study on the sizing of Blue Waters’ storage system and to explore the design of future highly storage-disaggregated HPC systems.</p>
+<p>In this JLESC project, we propose to analyze Darshan traces and Lustre metrics from several years of Blue Waters production to feed StorAlloc <a class="citation" href="#monniot:hal-03683568">(Monniot et al. 2022)</a>, a simulator of a storage-aware job scheduler developed within the Inria KerData’s team. The goal of work is twofold: to provide a post-mortem study on the sizing of Blue Waters’ storage system and to explore the design of future highly storage-disaggregated HPC systems.</p>
 
 <h2 id="results-for-20232024">Results for 2023/2024</h2>
 <p>We introduce Fives, a storage system simulator based on WRENCH and SimGrid, two simulation frameworks in the field. Fives, currently under development, is capable of reproducing the behavior of a Lustre file system. Using Darshan execution traces to both calibrate and validate the simulator, Fives can extract a number of metrics and correlation indices demonstrating a reasonable level of accuracy between real and simulated I/O times. The traces currently used in Fives come from machines for which only aggregated Darshan traces are publicly available. We are currently working on using Blue Waters traces to feed our simulator.</p>
@@ -325,7 +381,151 @@
 
 <p>In a second time, we will consider new calibration opportunities offered by the union of Blue Waters Darshan, Torque (resource manager) and Lustre traces. In particular, we expect this new data to allow finer calibration and validation of the Lustre model inside our simulator.</p>
 
+<h2 id="results-for-20242025">Results for 2024/2025</h2>
+<p>A conference paper presenting Fives <a class="citation" href="#monniotEtAl2024">(Monniot et al. 2024)</a>, an HPC storage system simulator, has been accepted at HiPC’24 (Bengalore, India). Although Fives uses Darshan traces from an ANL system (Theta), an extended version of the paper exploiting Blue Waters traces is in preparation.</p>
+
+<p>We also introduced MOSAIC <a class="citation" href="#jolivelEtAl2024">(Jolivel et al. 2024)</a>, an approach to categorize execution traces and give information about the general behavior of applications from an I/O perspective. we analyze a full year of I/O execution traces of Blue Waters from which, we determine a set of non-exclusive categories to describe the I/O behavior of jobs, including the temporality and the periodicity of the accesses and the metadata overhead. This paper has been accepted in the SC’24 PDSW workshop. This work is currently being pursued, with several lines of research focusing in particular on automating the clustering of I/O operations.</p>
+
+<p>Finally, still using Blue Waters traces among others, we proposed an in-depth study of access temporality on large-scale storage systems. This work has been accepted at IPDPS 2025 <a class="citation" href="#boitoEtAl2024">(Boito et al. 2025)</a>.</p>
+
 <h2 id="references">References</h2>
+<ol class="bibliography"><li><div class="bibtex-entry-container">
+  <div class="d-flex flex-row flex-wrap">
+    <div class="col-md-3 col-sm-12 bibtex-ref-meta hidden">
+      <div class="row">
+        <div class="col-md-12 ref-label tag tag-default">
+          boitoEtAl2024
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-sm btn-secondary col-xs-6" data-toggle="collapse" data-target="#collapseboitoEtAl2024Bibtex" aria-expanded="false" aria-controls="collapseboitoEtAl2024Bibtex">
+          BibTeX
+        </button>
+        <button class="btn btn-sm btn-secondary-outline col-xs-6" disabled="disabled" data-toggle="collapse" data-target="#collapseboitoEtAl2024Abstract" aria-expanded="false" aria-controls="collapseboitoEtAl2024Abstract">
+          Abstract
+        </button>
+      </div>
+    </div>
+
+    <div class="bibtex-ref-entry col-md-9 col-sm-12">
+      <span id="boitoEtAl2024">Boito, Francieli, Luan Teylo, Mihail Popov, Théo Jolivel, François Tessier, Jakob Luettgau, Julien Monniot, Ahmad Tarraf, André Carneiro, and Carla Osthoff. 2025. “A Deep Look Into the Temporal I/O Behavior of HPC Applications.” <a href="https://inria.hal.science/hal-04887809" target="_blank">https://inria.hal.science/hal-04887809</a>.</span>
+    </div>
+  </div>
+  <div class="collapse" id="collapseboitoEtAl2024Bibtex">
+    <div class="row bibtex-ref-raw">
+      <div class="col-sm-10 offset-sm-1">
+        <pre><code>@unpublished{boitoEtAl2024,
+  title = {{A Deep Look Into the Temporal I/O Behavior of HPC Applications}},
+  author = {Boito, Francieli and Teylo, Luan and Popov, Mihail and Jolivel, Th{\'e}o and Tessier, Fran{\c c}ois and Luettgau, Jakob and Monniot, Julien and Tarraf, Ahmad and Carneiro, Andr{\'e} and Osthoff, Carla},
+  url = {https://inria.hal.science/hal-04887809},
+  note = {working paper or preprint},
+  year = {2025},
+  month = jan,
+  keywords = {high-performance computing ; parallel file systems ; workload characterization ; temporal I/O behavior},
+  pdf = {https://inria.hal.science/hal-04887809v1/file/main.pdf},
+  hal_id = {hal-04887809},
+  hal_version = {v1}
+}
+</code></pre>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</li>
+<li><div class="bibtex-entry-container">
+  <div class="d-flex flex-row flex-wrap">
+    <div class="col-md-3 col-sm-12 bibtex-ref-meta hidden">
+      <div class="row">
+        <div class="col-md-12 ref-label tag tag-default">
+          monniotEtAl2024
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-sm btn-secondary col-xs-6" data-toggle="collapse" data-target="#collapsemonniotEtAl2024Bibtex" aria-expanded="false" aria-controls="collapsemonniotEtAl2024Bibtex">
+          BibTeX
+        </button>
+        <button class="btn btn-sm btn-secondary-outline col-xs-6" disabled="disabled" data-toggle="collapse" data-target="#collapsemonniotEtAl2024Abstract" aria-expanded="false" aria-controls="collapsemonniotEtAl2024Abstract">
+          Abstract
+        </button>
+      </div>
+    </div>
+
+    <div class="bibtex-ref-entry col-md-9 col-sm-12">
+      <span id="monniotEtAl2024">Monniot, Julien, François Tessier, Henri Casanova, and Gabriel Antoniu. 2024. “Simulation of Large-Scale HPC Storage Systems: Challenges and Methodologies.” In <i>HiPC 2024 - 31st IEEE International Conference on High Performance Computing, Data, and Analytics</i>, 1–11. Bangalore, India. <a href="https://inria.hal.science/hal-04784808" target="_blank">https://inria.hal.science/hal-04784808</a>.</span>
+    </div>
+  </div>
+  <div class="collapse" id="collapsemonniotEtAl2024Bibtex">
+    <div class="row bibtex-ref-raw">
+      <div class="col-sm-10 offset-sm-1">
+        <pre><code>@inproceedings{monniotEtAl2024,
+  title = {{Simulation of Large-Scale HPC Storage Systems: Challenges and Methodologies}},
+  author = {Monniot, Julien and Tessier, Fran{\c c}ois and Casanova, Henri and Antoniu, Gabriel},
+  url = {https://inria.hal.science/hal-04784808},
+  booktitle = {{HiPC 2024 - 31st IEEE International Conference on High Performance Computing, Data, and Analytics}},
+  address = {Bangalore, India},
+  pages = {1-11},
+  year = {2024},
+  month = dec,
+  keywords = {HPC ; Storage ; Modeling ; Simulation},
+  pdf = {https://inria.hal.science/hal-04784808v1/file/Simulation_based_Study_of_a_Large_Scale_Storage_System-2.pdf},
+  hal_id = {hal-04784808},
+  hal_version = {v1}
+}
+</code></pre>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</li>
+<li><div class="bibtex-entry-container">
+  <div class="d-flex flex-row flex-wrap">
+    <div class="col-md-3 col-sm-12 bibtex-ref-meta hidden">
+      <div class="row">
+        <div class="col-md-12 ref-label tag tag-default">
+          jolivelEtAl2024
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-sm btn-secondary col-xs-6" data-toggle="collapse" data-target="#collapsejolivelEtAl2024Bibtex" aria-expanded="false" aria-controls="collapsejolivelEtAl2024Bibtex">
+          BibTeX
+        </button>
+        <button class="btn btn-sm btn-secondary-outline col-xs-6" disabled="disabled" data-toggle="collapse" data-target="#collapsejolivelEtAl2024Abstract" aria-expanded="false" aria-controls="collapsejolivelEtAl2024Abstract">
+          Abstract
+        </button>
+      </div>
+    </div>
+
+    <div class="bibtex-ref-entry col-md-9 col-sm-12">
+      <span id="jolivelEtAl2024">Jolivel, Théo, François Tessier, Julien Monniot, and Guillaume Pallez. 2024. “MOSAIC: Detection and Categorization of I/O Patterns in HPC Applications.” In <i>PDSW 2024</i>. Atlanta, United States. https://doi.org/10.1109/SCW63240.2024.00172.</span>
+    </div>
+  </div>
+  <div class="collapse" id="collapsejolivelEtAl2024Bibtex">
+    <div class="row bibtex-ref-raw">
+      <div class="col-sm-10 offset-sm-1">
+        <pre><code>@inproceedings{jolivelEtAl2024,
+  title = {{MOSAIC: Detection and Categorization of I/O Patterns in HPC Applications}},
+  author = {Jolivel, Th{\'e}o and Tessier, Fran{\c c}ois and Monniot, Julien and Pallez, Guillaume},
+  url = {https://hal.science/hal-04808300},
+  booktitle = {{PDSW 2024}},
+  address = {Atlanta, United States},
+  year = {2024},
+  month = nov,
+  doi = {10.1109/SCW63240.2024.00172},
+  keywords = {characterization ; analysis ; I/O ; HPC},
+  pdf = {https://hal.science/hal-04808300v1/file/PDSW24_Workshop_Paper-7.pdf},
+  hal_id = {hal-04808300},
+  hal_version = {v1}
+}
+</code></pre>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</li></ol>
+
 <ol class="bibliography"><li><div class="bibtex-entry-container">
   <div class="d-flex flex-row flex-wrap">
     <div class="col-md-3 col-sm-12 bibtex-ref-meta hidden">
